@@ -23,5 +23,4 @@ public class User {
     @OneToMany(mappedBy = "creator", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Quiz> createdQuizzes;
 
-
 }

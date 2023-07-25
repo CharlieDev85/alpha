@@ -15,12 +15,12 @@ public interface UserMapper {
 
     UserMapper INSTANCE = Mappers.getMapper(UserMapper.class);
 
-    @Mapping(target = "createdQuizzesDTO", source = "createdQuizzes")
+    @Mapping(target = "createdQuizzesDTO", ignore = true)
     //@Mapping(target = "answeredQuizzesDTO", source = "answeredQuizzes")
     UserDTO toDto(User user);
 
 
-    @Mapping(target = "createdQuizzes", source = "createdQuizzesDTO")
+    @Mapping(target = "createdQuizzes", ignore = true)
     //@Mapping(target = "answeredQuizzes", source = "answeredQuizzesDTO")
     User toEntity(UserDTO userDTO);
 

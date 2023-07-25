@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.green.alpha.repository.UserRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class UserService {
 
@@ -27,6 +30,17 @@ public class UserService {
     public UserDTO findById(Long id){
         User user = userRepository.findById(id).get();
         return UserMapper.INSTANCE.toDto(user);
+    }
+
+    public List<UserDTO> findAll(){
+        List<User> users = userRepository.findAll();
+        List<UserDTO> usersDTO =  new ArrayList<>();
+        for(User user: users){
+            //System.out.println(user.toString());
+            UserDTO userDTO = UserMapper.INSTANCE.toDto(user);
+            usersDTO.add(userDTO);
+        }
+        return usersDTO;
     }
 
 }

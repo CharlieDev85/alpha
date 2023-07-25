@@ -1,6 +1,10 @@
+-- Insert initial users
+INSERT INTO users (user_id, email, first_name, last_name) VALUES (1, 'charlesm@mail.com', 'charles', 'marroq' );
+INSERT INTO users (user_id, email, first_name, last_name) VALUES (2, 'enriquec@mail.com', 'enrique', 'cabrera' );
+
 -- Insert initial quizzes
-INSERT INTO quizzes (quiz_id, title, instructions, max_score) VALUES (1, 'Middle Test - Basic 1', 'Answer the following questions', 30.0);
-INSERT INTO quizzes (quiz_id, title, instructions, max_score) VALUES (2, 'Final Test - Basic 1', 'Answer the following questions', 40.0);
+INSERT INTO quizzes (quiz_id, title, instructions, max_score, user_id) VALUES (1, 'Middle Test - Basic 1', 'Answer this middle tests', 30.0, 1);
+INSERT INTO quizzes (quiz_id, title, instructions, max_score, user_id) VALUES (2, 'Final Test - Basic 1', 'Answer this final test', 40.0, 1);
 
 -- Insert initial questions
 INSERT INTO questions (question_id, text, quiz_id) VALUES (1, 'I ___ a developer', 1);
@@ -17,5 +21,7 @@ INSERT INTO answers (answer_id, text, correct, question_id) VALUES (5, 'was', tr
 
 INSERT INTO answers (answer_id, text, correct, question_id) VALUES (6, 'wakes', true, 3);
 INSERT INTO answers (answer_id, text, correct, question_id) VALUES (7, 'wake', false, 3);
-INSERT INTO answers (answer_id, text, correct, question_id) VALUES (8, 'buys', false, 3);
-INSERT INTO answers (answer_id, text, correct, question_id) VALUES (9, 'bought', true, 3);
+INSERT INTO answers (answer_id, text, correct, question_id) VALUES (8, 'buys', false, 4);
+INSERT INTO answers (answer_id, text, correct, question_id) VALUES (9, 'bought', true, 4);
+
+-- git push -u origin main
