@@ -12,6 +12,14 @@ public class UserDTO {
     private String lastName;
     private String email;
     private List<QuizDTO> createdQuizzesDTO;
-    private List<AnsweredQuizDTO> answeredQuizzesDTO;
+
+
+    public UserDTO(){}
+
+    public UserDTO(String firstName, String lastName, String email){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
 
 }
